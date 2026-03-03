@@ -58,9 +58,9 @@ export function OrganizationTeam() {
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
           Organization
         </h2>
-        <p className="text-gray-200 max-w-3xl mx-auto">
+        {/* <p className="text-gray-200 max-w-3xl mx-auto">
           Leadership guiding the vision and academic sessions of the conclave.
-        </p>
+        </p> */}
       </div>
 
       {/* Organizing Committee */}

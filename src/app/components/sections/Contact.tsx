@@ -38,7 +38,7 @@ export function Contact() {
             </div>
 
             {/* Location */}
-            <div className="flex items-start gap-4 p-4 bg-white rounded-xl border-2 border-gray-200">
+            {/* <div className="flex items-start gap-4 p-4 bg-white rounded-xl border-2 border-gray-200">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#800020]/10 rounded-xl flex items-center justify-center flex-shrink-0">
                 <MapPin className="w-5 h-5 sm:w-7 sm:h-7 text-[#800020]" />
               </div>
@@ -48,7 +48,7 @@ export function Contact() {
                   Lucknow, Uttar Pradesh
                 </p>
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>
@@ -56,7 +56,7 @@ export function Contact() {
         {/* Weather */}
         <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
           <h3 className="text-xl font-bold text-gray-900 mb-6">
-            Weather Averages (21–23 March)
+            Lucknow Weather Averages (21–23 March)
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">

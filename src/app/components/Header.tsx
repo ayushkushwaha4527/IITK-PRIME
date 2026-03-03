@@ -69,14 +69,14 @@ export function Header() {
               alt="IITK PRIME"
               className="h-10 sm:h-12 w-auto object-contain"
             />
-            <div className="flex flex-col leading-tight">
+            {/* <div className="flex flex-col leading-tight">
               <span className="font-bold text-lg sm:text-xl text-gray-900">
                 IITK PRIME
               </span>
               <span className="text-xs text-[#800020] font-medium">
                 Leadership 2026
               </span>
-            </div>
+            </div> */}
           </button>
 
           {/* Desktop Navigation (ONLY large screens) */}

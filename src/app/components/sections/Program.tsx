@@ -88,7 +88,7 @@ export function Program() {
         {
           time: "9:30 AM – 10:30 AM",
           title: "Morning Session – Translational Leadership",
-          trackChair: "Track Chair: Prof. Somitra K Sanadhya (WSAIS/C3i, IITK)",
+          trackChair: " Prof. Somitra K Sanadhya (WSAIS/C3i, IITK)",
           speakers: [
             "Prof. Krishnamurty Subramanian – Economic leadership during once in a century crisis",
             "Sri V Umashankar – To be announced",
@@ -102,7 +102,7 @@ export function Program() {
 
         {
           time: "10:30 AM – 11:30 AM",
-          title: "Short Talks (10 minute each)",
+          title: "Short Talks (10 minutes each)",
           speakers: [
             "Cmde Dr. Prem Chand – Applying Translational Leadership to Solve India's Hard Problems with Personal Real-Life Examples",
             "Dr. Bhartendu K Gairola – Need for building self reliance in core technology- Role of IITK",
@@ -144,7 +144,7 @@ export function Program() {
         },
         {
           time: "2:30 PM – 3:30 PM",
-          title: "Short Talks (10 minute each,Details - to be declared)",
+          title: "Short Talks (Details - to be declared)",
           type: "talk",
           location: "Main Hall",
         },
@@ -162,7 +162,7 @@ export function Program() {
         },
         {
           time: "5:00 PM – 6:50 PM",
-          title: "Festschrift Event – Reminiscences",
+          title: "Festschrift Event for Prof. Manindra Agrawal – Reminiscences",
           type: "general",
           location: "Main Hall",
         },

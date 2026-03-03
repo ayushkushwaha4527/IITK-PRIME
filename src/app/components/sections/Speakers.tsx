@@ -52,11 +52,11 @@ export function Speakers() {
     <section id="speakers" className="py-20 bg-white">
       <div className="bg-gradient-to-br from-[#800020] via-black to-black text-white py-16 mb-20 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-          Distinguished Speakers
+           Speakers
         </h2>
-        <p className="text-gray-200 max-w-3xl mx-auto">
+        {/* <p className="text-gray-200 max-w-3xl mx-auto">
           Renowned researchers and leaders.
-        </p>
+        </p> */}
       </div>
 
       <div className="max-w-7xl mx-auto px-6">

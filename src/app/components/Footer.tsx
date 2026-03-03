@@ -93,7 +93,7 @@ export function Footer() {
                 </span>
               </p>
 
-              <p>Location: Lucknow, Uttar Pradesh</p>
+              {/* <p>Location: Lucknow, Uttar Pradesh</p> */}
             </div>
           </div>
         </div>

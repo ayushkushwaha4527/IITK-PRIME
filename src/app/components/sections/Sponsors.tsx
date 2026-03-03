@@ -19,17 +19,18 @@ export function Sponsors() {
 
   return (
     <section id="sponsors" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our Sponsors
-          </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            The IITK PRIME Leadership Conclave is supported by the following institutions
-          </p>
-        </div>
+      {/* Gradient Header (Same as other sections) */}
+      <div className="bg-gradient-to-br from-[#800020] via-black to-black text-white py-16 mb-20 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          Our Sponsors
+        </h2>
+        <p className="text-gray-200 max-w-3xl mx-auto">
+          The IITK PRIME Leadership Conclave is supported by the following institutions
+        </p>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* First Row - 4 Sponsors */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center mb-8">
@@ -50,7 +51,7 @@ export function Sponsors() {
           ))}
         </div>
 
-        {/* Second Row - 3 Sponsors (Responsive + Centered) */}
+        {/* Second Row - 3 Sponsors */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-center max-w-4xl mx-auto">
           {sponsors.slice(4).map((sponsor, index) => (
             <div
