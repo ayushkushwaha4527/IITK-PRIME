@@ -11,7 +11,7 @@ export function Header() {
     { id: "about", label: "About" },
     { id: "program", label: "Program" },
     { id: "speakers", label: "Speakers" },
-    { id: "organization-team", label: "Organization" }, // ✅ fixed
+    { id: "organization-team", label: "Organization" },
     { id: "sponsors", label: "Sponsors" },
     { id: "contact", label: "Contact" },
   ];
@@ -19,17 +19,12 @@ export function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 3;
-
       let currentSection = "home";
 
       for (const item of navItems) {
         const element = document.getElementById(item.id);
-        if (element) {
-          const { offsetTop } = element;
-
-          if (scrollPosition >= offsetTop) {
-            currentSection = item.id;
-          }
+        if (element && scrollPosition >= element.offsetTop) {
+          currentSection = item.id;
         }
       }
 
@@ -37,7 +32,7 @@ export function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // run once on mount
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -56,7 +51,6 @@ export function Header() {
         behavior: "smooth",
       });
     }
-
     setMobileMenuOpen(false);
   };
 
@@ -64,19 +58,19 @@ export function Header() {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          
+
           {/* Logo */}
           <button
             onClick={() => scrollToSection("home")}
-            className="flex items-center space-x-3 group"
+            className="flex items-center space-x-3"
           >
             <img
               src={logo}
               alt="IITK PRIME"
-              className="h-12 w-auto object-contain"
+              className="h-10 sm:h-12 w-auto object-contain"
             />
-            <div className="flex flex-col">
-              <span className="font-bold text-xl text-gray-900">
+            <div className="flex flex-col leading-tight">
+              <span className="font-bold text-lg sm:text-xl text-gray-900">
                 IITK PRIME
               </span>
               <span className="text-xs text-[#800020] font-medium">
@@ -85,13 +79,13 @@ export function Header() {
             </div>
           </button>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          {/* Desktop Navigation (ONLY large screens) */}
+          <nav className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                className={`px-3 py-2 rounded-lg text-sm transition-all duration-200 whitespace-nowrap ${
                   activeSection === item.id
                     ? "bg-[#800020] text-white font-semibold shadow-md"
                     : "text-gray-700 hover:bg-gray-100 hover:text-[#800020] font-medium"
@@ -102,9 +96,9 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile / Tablet Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -115,9 +109,9 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile + Tablet Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 space-y-1 border-t border-gray-200">
+          <nav className="lg:hidden py-4 space-y-1 border-t border-gray-200">
             {navItems.map((item) => (
               <button
                 key={item.id}

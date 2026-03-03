@@ -103,12 +103,6 @@ export function Program() {
         {
           time: "10:30 AM – 11:30 AM",
           title: "Short Talks (10 minute each)",
-          type: "talk",
-          location: "Main Hall",
-        },
-        {
-          time: "10:30 AM – 11:30 AM",
-          title: "Short Talks (10 minute each)",
           speakers: [
             "Cmde Dr. Prem Chand – Applying Translational Leadership to Solve India's Hard Problems with Personal Real-Life Examples",
             "Dr. Bhartendu K Gairola – Need for building self reliance in core technology- Role of IITK",
@@ -119,6 +113,12 @@ export function Program() {
           ],
           type: "talk",
           location: "Main Hall",
+        },
+        {
+          time: "11:30 AM – 12:00 PM",
+          title: "Tea Break",
+          type: "break",
+          location: "Foyer",
         },
 
         {
@@ -188,18 +188,16 @@ export function Program() {
     },
   ];
 
- const getSessionColor = (type: string) => {
-  switch (type) {
-    case "talk":
-      return "bg-[#800020]/5 border-l-4 border-[#800020]";
-    case "break":
-      return "bg-gray-50 border-l-4 border-[#ff9999]"; // lighter maroon
-    default:
-      return "bg-gray-50 border-l-4 border-gray-300";
-  }
-};
-
-
+  const getSessionColor = (type: string) => {
+    switch (type) {
+      case "talk":
+        return "bg-[#800020]/5 border-l-4 border-[#800020]";
+      case "break":
+        return "bg-gray-50 border-l-4 border-[#ff9999]"; // lighter maroon
+      default:
+        return "bg-gray-50 border-l-4 border-gray-300";
+    }
+  };
 
   return (
     <section id="program" className="py-20 bg-gray-50">
@@ -224,7 +222,7 @@ export function Program() {
           </div>
           <div className="flex items-center gap-3">
             {/* Box color changed to Maroon */}
-           <div className="w-4 h-4 bg-[#ff9999] rounded"></div>
+            <div className="w-4 h-4 bg-[#ff9999] rounded"></div>
 
             <span className="font-semibold text-[#800020]">Break</span>
           </div>

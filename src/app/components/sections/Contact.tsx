@@ -56,7 +56,7 @@ export function Contact() {
         {/* Weather */}
         <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
           <h3 className="text-xl font-bold text-gray-900 mb-6">
-            Weather Forecast (21–23 March)
+            Weather Averages (21–23 March)
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -65,21 +65,21 @@ export function Contact() {
                 date: "21 Mar",
                 desc: "Mostly Sunny",
                 high: "32°C",
-                low: "17°C",
+                low: "20°C",
                 icon: <Sun className="w-5 h-5 text-yellow-500" />,
               },
               {
                 date: "22 Mar",
                 desc: "Sunny & Warm",
                 high: "33°C",
-                low: "18°C",
+                low: "19°C",
                 icon: <CloudSun className="w-5 h-5 text-yellow-500" />,
               },
               {
                 date: "23 Mar",
                 desc: "Warm & Dry",
                 high: "31°C",
-                low: "16°C",
+                low: "20°C",
                 icon: <Sun className="w-5 h-5 text-yellow-500" />,
               },
             ].map((day, i) => (
