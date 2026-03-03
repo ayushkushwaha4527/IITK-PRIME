@@ -10,7 +10,7 @@ export function Contact() {
           Contact
         </h2>
         <p className="text-gray-200 max-w-3xl mx-auto">
-          Get in touch with us for any queries regarding the conclave.
+         Feel Free to Get in touch with us.
         </p>
       </div>
 

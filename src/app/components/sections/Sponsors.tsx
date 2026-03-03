@@ -26,7 +26,7 @@ export function Sponsors() {
           Our Sponsors
         </h2>
         <p className="text-gray-200 max-w-3xl mx-auto">
-          The IITK PRIME Leadership Conclave is supported by the following institutions
+          The IITK PRIME Leadership Conclave is supported by the following institutions.
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "../assets/images/iitklogo.png";
+import logo from "../assets/images/iitkmaroomlogo.jpg";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,11 +40,9 @@ export function Header() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80;
+      const offset = 100;
       const y =
-        element.getBoundingClientRect().top +
-        window.pageYOffset -
-        offset;
+        element.getBoundingClientRect().top + window.pageYOffset - offset;
 
       window.scrollTo({
         top: y,
@@ -55,37 +53,29 @@ export function Header() {
   };
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-
+        {/* Increased Header Height */}
+        <div className="flex items-center justify-between h-24 lg:h-28">
           {/* Logo */}
           <button
             onClick={() => scrollToSection("home")}
-            className="flex items-center space-x-3"
+            className="flex items-center"
           >
             <img
               src={logo}
               alt="IITK PRIME"
-              className="h-10 sm:h-12 w-auto object-contain"
+              className="h-16 sm:h-20 lg:h-24 w-auto object-contain"
             />
-            {/* <div className="flex flex-col leading-tight">
-              <span className="font-bold text-lg sm:text-xl text-gray-900">
-                IITK PRIME
-              </span>
-              <span className="text-xs text-[#800020] font-medium">
-                Leadership 2026
-              </span>
-            </div> */}
           </button>
 
-          {/* Desktop Navigation (ONLY large screens) */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-2">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`px-3 py-2 rounded-lg text-sm transition-all duration-200 whitespace-nowrap ${
+                className={`px-4 py-2 rounded-lg text-base transition-all duration-200 whitespace-nowrap ${
                   activeSection === item.id
                     ? "bg-[#800020] text-white font-semibold shadow-md"
                     : "text-gray-700 hover:bg-gray-100 hover:text-[#800020] font-medium"
