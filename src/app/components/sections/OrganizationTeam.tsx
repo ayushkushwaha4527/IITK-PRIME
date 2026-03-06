@@ -11,6 +11,7 @@ export function OrganizationTeam() {
 
   const organizingCommittee = [
     {
+      role: "General Chair",
       name: "Prof. Nitin Saxena",
       title: "Dean, WSAIS",
       company: "IIT Kanpur",
@@ -18,6 +19,7 @@ export function OrganizationTeam() {
       website: "https://www.iitk.ac.in/dr-nitin-saxena",
     },
     {
+      role: "Organizing Chair",
       name: "Prof. Amey Karkare",
       title: "Dean, DORA",
       company: "IIT Kanpur",
@@ -36,7 +38,7 @@ export function OrganizationTeam() {
     },
     {
       name: "Prof. Somitra K Sanadhya",
-      title: "C3iHub",
+      title: "Professor, WSAIS",
       company: "IIT Kanpur",
       image: somitra,
       website: "https://iitk.ac.in/somitra-kumar-sanadhya",
@@ -58,54 +60,60 @@ export function OrganizationTeam() {
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
           Organization
         </h2>
-        {/* <p className="text-gray-200 max-w-3xl mx-auto">
-          Leadership guiding the vision and academic sessions of the conclave.
-        </p> */}
       </div>
 
-      {/* Organizing Committee */}
+      {/* Conference Chairs */}
       <div className="max-w-7xl mx-auto px-6 mb-24">
         <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-          Organizing Committee
+          Organizing Commitee
         </h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+
           {organizingCommittee.map((member, index) => (
-            <div
-              key={index}
-              className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#800020] p-6 text-center hover:-translate-y-2"
-            >
-              <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg mb-5 group-hover:scale-110 transition">
-                <ImageWithFallback
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover object-top"
-                />
+            <div key={index} className="text-center">
+
+              {/* Small Heading Above Card */}
+              <p className="text-sm font-semibold text-[#800020] mb-3 uppercase tracking-wide">
+                {member.role}
+              </p>
+
+              <div className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#800020] p-6 hover:-translate-y-2">
+
+                <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg mb-5 group-hover:scale-110 transition">
+                  <ImageWithFallback
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+
+                <h3 className="font-bold text-gray-900 group-hover:text-[#800020]">
+                  {member.name}
+                </h3>
+
+                <p className="text-xs font-semibold text-[#800020] uppercase mt-1">
+                  {member.title}
+                </p>
+
+                <p className="text-gray-600 text-xs mt-2">
+                  {member.company}
+                </p>
+
+                <a
+                  href={member.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 text-xs text-gray-700 hover:text-[#800020]"
+                >
+                  <Globe className="w-4 h-4" />
+                  View Profile
+                </a>
+
               </div>
-
-              <h3 className="font-bold text-gray-900 group-hover:text-[#800020]">
-                {member.name}
-              </h3>
-
-              <p className="text-xs font-semibold text-[#800020] uppercase mt-1">
-                {member.title}
-              </p>
-
-              <p className="text-gray-600 text-xs mt-2">
-                {member.company}
-              </p>
-
-              <a
-                href={member.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 text-xs text-gray-700 hover:text-[#800020]"
-              >
-                <Globe className="w-4 h-4" />
-                View Profile
-              </a>
             </div>
           ))}
+
         </div>
       </div>
 
@@ -116,11 +124,13 @@ export function OrganizationTeam() {
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
           {trackChairs.map((chair, index) => (
             <div
               key={index}
               className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#800020] p-6 text-center hover:-translate-y-2"
             >
+
               <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg mb-5 group-hover:scale-110 transition">
                 <ImageWithFallback
                   src={chair.image}
@@ -150,8 +160,10 @@ export function OrganizationTeam() {
                 <Globe className="w-4 h-4" />
                 View Profile
               </a>
+
             </div>
           ))}
+
         </div>
       </div>
 

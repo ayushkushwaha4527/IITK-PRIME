@@ -1,4 +1,4 @@
-import { Clock } from "lucide-react";
+import { Clock, MapPin, User } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
 export function Program() {
@@ -40,10 +40,9 @@ export function Program() {
           type: "talk",
           location: "Main Hall",
         },
-
         {
           time: "6:00 PM – 7:00 PM",
-          title: "Short Talks (10 minutes each)",
+          title: "Short Talks - Title: Manindra as I know him (10 minutes each)",
           speakers: [
             "Prof. Somenath Biswas",
             "Prof. V Vinay",
@@ -54,7 +53,6 @@ export function Program() {
           type: "talk",
           location: "Main Hall",
         },
-
         {
           time: "7:00 PM onward",
           title: "Mixer and Informal Networking",
@@ -88,7 +86,7 @@ export function Program() {
         {
           time: "9:30 AM – 10:30 AM",
           title: "Morning Session – Translational Leadership",
-          trackChair: " Prof. Somitra K Sanadhya (WSAIS/C3i, IITK)",
+          trackChair: " Prof. Somitra K Sanadhya (WSAIS/C3ihub, IITK)",
           speakers: [
             "Prof. Krishnamurty Subramanian – Economic leadership during once in a century crisis",
             "Sri V Umashankar – To be announced",
@@ -99,12 +97,11 @@ export function Program() {
           type: "talk",
           location: "Main Hall",
         },
-
         {
           time: "10:30 AM – 11:30 AM",
           title: "Short Talks (10 minutes each)",
           speakers: [
-            "Cmde Dr. Prem Chand – Applying Translational Leadership to Solve India's Hard Problems with Personal Real-Life Examples",
+            "Dr. Prem Chand – Applying Translational Leadership to Solve India's Hard Problems with Personal Real-Life Examples",
             "Dr. Bhartendu K Gairola – Need for building self reliance in core technology- Role of IITK",
             "Dr. Gulshan Rai – Evolving technological complexities impact on institutions like IITs",
             "Dr. Tanima Hajra – Story of C3iHub: Building Indigenous Cybersecurity Capability",
@@ -120,7 +117,6 @@ export function Program() {
           type: "break",
           location: "Foyer",
         },
-
         {
           time: "12:00 PM – 1:00 PM",
           title: "Afternoon Session – Institution Building",
@@ -135,7 +131,6 @@ export function Program() {
           type: "talk",
           location: "Main Hall",
         },
-
         {
           time: "1:15 PM – 2:15 PM",
           title: "Lunch",
@@ -188,23 +183,48 @@ export function Program() {
     },
   ];
 
-  const getSessionColor = (type: string) => {
+  const getCardStyle = (type: string) => {
     switch (type) {
       case "talk":
-        return "bg-[#800020]/5 border-l-4 border-[#800020]";
+        return {
+          card: "bg-white border border-gray-100 border-l-4 border-l-[#800020] shadow-sm hover:shadow-md",
+          badge: " text-black",
+          dot: "bg-[#800020]",
+          titleColor: "text-gray-900",
+          trackChairBg: "bg-[#800020]/5 border-b border-[#800020]/10",
+          speakerRowBg: "hover:bg-gray-50",
+          speakerIndex: "bg-[#800020]/10 text-[#800020]",
+        };
       case "break":
-        return "bg-gray-50 border-l-4 border-[#ff9999]"; // lighter maroon
+        return {
+          card: "bg-rose-50 border border-rose-100 border-l-4 border-l-[#ff9999] shadow-sm hover:shadow-md",
+          badge: "bg-[#800020] text-white",
+          dot: "bg-[#ff9999]",
+          titleColor: "text-[#800020]",
+          trackChairBg: "bg-[#800020]/5 border-b border-[#800020]/10",
+          speakerRowBg: "hover:bg-rose-100/40",
+          speakerIndex: "bg-[#800020]/10 text-[#800020]",
+        };
       default:
-        return "bg-gray-50 border-l-4 border-gray-300";
+        return {
+          card: "bg-gray-50 border border-gray-200 border-l-4 border-l-gray-300 shadow-sm hover:shadow-md",
+          badge: "bg-gray-200 text-gray-700",
+          dot: "bg-gray-300",
+          titleColor: "text-gray-800",
+          trackChairBg: "bg-gray-100 border-b border-gray-200",
+          speakerRowBg: "hover:bg-gray-100",
+          speakerIndex: "bg-gray-200 text-gray-600",
+        };
     }
   };
 
   return (
-    <section id="program" className="py-20 bg-gray-50">
-      {/* Header */}
-      <div className="bg-gradient-to-br from-[#800020] via-black to-black text-white py-16 mb-20">
+    <section id="program" className="bg-gray-50">
+
+      {/* ── Header ── */}
+      <div className="bg-gradient-to-br from-[#800020] via-black to-black text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl mb-6 font-bold">
+          <h2 className="text-4xl md:text-5xl mb-4 font-bold">
             Program & Schedule
           </h2>
           <p className="text-xl text-gray-200 max-w-3xl leading-relaxed">
@@ -213,126 +233,189 @@ export function Program() {
         </div>
       </div>
 
-      {/* Legend */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="flex flex-wrap gap-6 justify-center bg-white p-6 rounded-xl shadow-md">
-          <div className="flex items-center gap-3">
-            <div className="w-4 h-4 bg-[#800020] rounded"></div>
-            <span className="font-semibold text-gray-900">Talk</span>
-          </div>
-          <div className="flex items-center gap-3">
-            {/* Box color changed to Maroon */}
-            <div className="w-4 h-4 bg-[#ff9999] rounded"></div>
+      <div className="py-10">
 
-            <span className="font-semibold text-[#800020]">Break</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="w-4 h-4 bg-gray-300 rounded"></div>
-            <span className="font-semibold text-gray-900">General</span>
+        {/* ── Legend ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+          <div className="flex flex-wrap gap-6 justify-center bg-white p-5 rounded-2xl shadow-md border border-gray-100">
+            <div className="flex items-center gap-3">
+              <div className="w-4 h-4 bg-[#800020] rounded-sm" />
+              <span className="font-semibold text-gray-900 text-sm">Talk</span>
+            </div>
+            <div className="w-px h-5 bg-gray-200 self-center hidden sm:block" />
+            <div className="flex items-center gap-3">
+              <div className="w-4 h-4 bg-[#ff9999] rounded-sm" />
+              <span className="font-semibold text-[#800020] text-sm">Break</span>
+            </div>
+            <div className="w-px h-5 bg-gray-200 self-center hidden sm:block" />
+            <div className="flex items-center gap-3">
+              <div className="w-4 h-4 bg-gray-300 rounded-sm" />
+              <span className="font-semibold text-gray-900 text-sm">General</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Schedule */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Tabs defaultValue="day1" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12 bg-gray-100 p-1 rounded-xl shadow-inner">
-            <TabsTrigger
-              value="day1"
-              className="py-3 rounded-lg text-base font-semibold transition-all duration-300 data-[state=active]:bg-[#800020] data-[state=active]:text-white data-[state=active]:shadow-md text-gray-700 hover:bg-white"
-            >
-              Day 1
-            </TabsTrigger>
+        {/* ── Schedule ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Tabs defaultValue="day1" className="w-full">
 
-            <TabsTrigger
-              value="day2"
-              className="py-3 rounded-lg text-base font-semibold transition-all duration-300 data-[state=active]:bg-[#800020] data-[state=active]:text-white data-[state=active]:shadow-md text-gray-700 hover:bg-white"
-            >
-              Day 2
-            </TabsTrigger>
-          </TabsList>
+            {/* Tab switcher — segmented control */}
+            <TabsList className="flex w-fit mx-auto mb-6 bg-white border border-gray-300 rounded-lg shadow-sm overflow-hidden p-0 h-auto gap-0">
+              <TabsTrigger
+                value="day1"
+                className="px-12 py-2.5 text-sm font-bold transition-all duration-200 rounded-none border-r border-gray-300 data-[state=active]:bg-[#800020] data-[state=active]:text-white text-gray-600 hover:bg-gray-50"
+              >
+                Day 1
+              </TabsTrigger>
+              <TabsTrigger
+                value="day2"
+                className="px-12 py-2.5 text-sm font-bold transition-all duration-200 rounded-none data-[state=active]:bg-[#800020] data-[state=active]:text-white text-gray-600 hover:bg-gray-50"
+              >
+                Day 2
+              </TabsTrigger>
+            </TabsList>
 
-          {days.map((day, index) => (
-            <TabsContent key={index} value={`day${index + 1}`}>
-              <div className="mb-8 text-center">
-                <h3 className="text-3xl md:text-4xl mb-2 font-bold text-gray-900">
-                  {day.day}
-                </h3>
-                <p className="text-xl text-gray-600">{day.date}, 2026</p>
-              </div>
+            {days.map((day, dayIndex) => (
+              <TabsContent
+                key={dayIndex}
+                value={`day${dayIndex + 1}`}
+                className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden"
+              >
+                {/* Day heading strip */}
+                <div className="bg-gradient-to-r from-[#800020]/8 to-transparent border-b border-gray-100 px-6 py-5 text-center">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+                    {day.day}
+                  </h3>
+                  <p className="text-base text-gray-500 mt-0.5">{day.date}, 2026</p>
+                </div>
 
-              <div className="space-y-4">
-                {day.schedule.map((session, sessionIndex) => (
-                  <div
-                    key={sessionIndex}
-                    className={`${getSessionColor(
-                      session.type,
-                    )} p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow`}
-                  >
-                    <div className="flex flex-col lg:flex-row lg:justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex flex-wrap items-center gap-3 text-gray-700 mb-3">
-                          <Clock className="w-5 h-5 text-[#800020]" />
-                          {/* Text color changed to Maroon for Break */}
-                          <span
-                            className={`font-bold ${session.type === "break" ? "text-[#800020]" : "text-gray-900"}`}
-                          >
-                            {session.time}
-                          </span>
-                          <span className="text-gray-400">•</span>
-                          <span
-                            className={`font-semibold ${session.type === "break" ? "text-[#800020]" : ""}`}
-                          >
-                            {session.location}
-                          </span>
-                        </div>
-                        {/* Title color changed to Maroon for Break */}
-                        <h4
-                          className={`text-xl md:text-2xl font-bold ${session.type === "break" ? "text-[#800020]" : "text-gray-900"}`}
-                        >
-                          {session.title}
-                        </h4>
-                        {session.trackChair && (
-                          <p className="text-gray-800 mt-2 font-semibold">
-                            Track Chair: {session.trackChair}
-                          </p>
-                        )}
+                {/* Timeline */}
+                <div className="relative p-6">
+                  <div className="absolute left-11 top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#800020]/40 via-gray-200 to-gray-100 hidden lg:block" />
 
-                        {session.speakers && (
-                          <div className="mt-3">
-                            <p className="font-semibold text-gray-900 mb-1">
-                              Speakers:
-                            </p>
-                            <ul className="list-disc list-inside text-gray-600 text-sm space-y-1">
-                              {session.speakers.map((prof, i) => (
-                                <li key={i}>{prof}</li>
-                              ))}
-                            </ul>
+                  <div className="space-y-4">
+                    {day.schedule.map((session, sessionIndex) => {
+                      const styles = getCardStyle(session.type);
+                      const hasSpeakers = session.speakers && session.speakers.length > 0;
+                      const hasTrackChair = !!session.trackChair;
+                      const hasDescription = !!session.description;
+
+                      return (
+                        <div key={sessionIndex} className="relative lg:pl-14">
+
+                          {/* Timeline dot */}
+                          <div
+                            className={`absolute left-[14px] top-6 w-3.5 h-3.5 rounded-full border-2 border-white shadow-md hidden lg:block ${styles.dot}`}
+                          />
+
+                          {/* ── Session Card ── */}
+                          <div className={`${styles.card} rounded-2xl transition-shadow duration-200 overflow-hidden`}>
+
+                            {/* Card Header */}
+                            <div className="px-5 pt-5 pb-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                              <div className="flex-1 min-w-0">
+
+                                {/* Time & Location */}
+                                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2.5">
+                                  <div className="flex items-center gap-1.5 text-[#800020]">
+                                    <Clock className="w-4 h-4 flex-shrink-0" />
+                                    <span className="font-bold text-sm">{session.time}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1 text-gray-400">
+                                    <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
+                                    <span className="text-sm font-medium">{session.location}</span>
+                                  </div>
+                                </div>
+
+                                {/* Session Title */}
+                                <h4 className={`text-xl md:text-2xl font-bold leading-snug ${styles.titleColor}`}>
+                                  {session.title}
+                                </h4>
+                              </div>
+
+                              {/* Type Badge */}
+                              <div className="flex-shrink-0 self-start">
+                                <span className={`inline-block px-4 py-1.5 rounded-full text-sm font-semibold capitalize shadow-sm ${styles.badge}`}>
+                                  {session.type}
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* ── Sub-section: Track Chair ── */}
+                            {hasTrackChair && (
+                              <div className={`mx-5 mb-0 rounded-t-lg ${styles.trackChairBg} px-4 py-2.5 flex items-center gap-2`}>
+                                <User className="w-3.5 h-3.5 text-[#800020] flex-shrink-0" />
+                                <span className="text-xs font-bold text-[#800020] uppercase tracking-widest mr-2">
+                                  Track Chair
+                                </span>
+                                <span className="text-sm font-semibold text-gray-700">
+                                  {session.trackChair}
+                                </span>
+                              </div>
+                            )}
+
+                            {/* ── Sub-section: Speakers ── */}
+                            {hasSpeakers && (
+                              <div className={`mx-5 mb-0 border border-gray-100 rounded-b-lg ${hasTrackChair ? "rounded-t-none border-t-0" : "rounded-t-lg"} overflow-hidden`}>
+                                <div className="bg-gray-50 px-4 py-2 border-b border-gray-100">
+                                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">
+                                    Speakers
+                                  </span>
+                                </div>
+
+                                {session.speakers!.map((speaker, i) => {
+                                  const [name, ...talkParts] = speaker.split(" – ");
+                                  const talk = talkParts.join(" – ");
+                                  return (
+                                    <div
+                                      key={i}
+                                      className={`flex items-start gap-3 px-4 py-3 ${styles.speakerRowBg} transition-colors ${
+                                        i < session.speakers!.length - 1 ? "border-b border-gray-100" : ""
+                                      }`}
+                                    >
+                                      <span className={`flex-shrink-0 w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center mt-0.5 ${styles.speakerIndex}`}>
+                                        {i + 1}
+                                      </span>
+                                      <div className="flex-1 min-w-0">
+                                        <span className="font-semibold text-sm text-gray-900">{name}</span>
+                                        {talk && (
+                                          <>
+                                            <span className="text-gray-300 mx-1">—</span>
+                                            <span className="text-sm text-gray-500 italic">{talk}</span>
+                                          </>
+                                        )}
+                                      </div>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            )}
+
+                            {/* ── Description footer ── */}
+                            {hasDescription && (
+                              <div className="mx-5 mt-3 mb-5 flex items-start gap-2">
+                                <div className="mt-1 w-1 h-1 rounded-full bg-[#800020]/40 flex-shrink-0" />
+                                <p className="text-sm text-gray-500 italic leading-relaxed">
+                                  {session.description}
+                                </p>
+                              </div>
+                            )}
+
+                            {!hasSpeakers && !hasTrackChair && !hasDescription && <div className="pb-2" />}
+                            {(hasSpeakers || hasTrackChair) && <div className="pb-4" />}
+
                           </div>
-                        )}
-
-                        {session.description && (
-                          <p className="text-gray-600 mt-3 leading-relaxed">
-                            {session.description}
-                          </p>
-                        )}
-                      </div>
-
-                      <div className="flex-shrink-0 self-start">
-                        {/* Break badge now Maroon with white text */}
-                        <span
-                          className={`inline-block px-4 py-2 rounded-full text-sm font-semibold capitalize shadow-sm ${session.type === "break" ? "bg-[#800020] text-white" : "bg-white text-gray-900"}`}
-                        >
-                          {session.type}
-                        </span>
-                      </div>
-                    </div>
+                        </div>
+                      );
+                    })}
                   </div>
-                ))}
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
+                </div>
+
+              </TabsContent>
+            ))}
+          </Tabs>
+        </div>
+
       </div>
     </section>
   );

@@ -20,7 +20,7 @@ export function Sponsors() {
   return (
     <section id="sponsors" className="py-20 bg-white">
 
-      {/* Gradient Header (Same as other sections) */}
+      {/* Gradient Header */}
       <div className="bg-gradient-to-br from-[#800020] via-black to-black text-white py-16 mb-20 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
           Our Sponsors
@@ -33,18 +33,29 @@ export function Sponsors() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* First Row - 4 Sponsors */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch mb-8">
           {sponsors.slice(0, 4).map((sponsor, index) => (
             <div
               key={index}
-              className="bg-white border-2 border-gray-200 rounded-2xl p-6 flex flex-col items-center justify-center hover:border-[#800020] hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="group relative bg-white border border-[#800020]/20 rounded-2xl p-6 flex flex-col items-center justify-between hover:border-[#800020]/50 hover:shadow-lg transition-all duration-300 overflow-hidden min-h-[11rem]"
             >
-              <img
-                src={sponsor.logo}
-                alt={sponsor.name}
-                className="max-h-20 w-full object-contain mb-4"
-              />
-              <p className="text-sm font-bold text-gray-900 text-center">
+              {/* Top accent bar */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#800020] to-[#ff9999]" />
+
+              {/* Logo */}
+              <div className="flex-1 flex items-center justify-center w-full py-2">
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  className="max-h-20 w-full object-contain"
+                />
+              </div>
+
+              {/* Divider */}
+              <div className="w-10 h-0.5 bg-[#800020]/25 rounded-full my-2" />
+
+              {/* Name */}
+              <p className="text-xs font-bold text-gray-700 text-center group-hover:text-[#800020] transition-colors duration-300 leading-snug">
                 {sponsor.name}
               </p>
             </div>
@@ -52,18 +63,29 @@ export function Sponsors() {
         </div>
 
         {/* Second Row - 3 Sponsors */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-center max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-stretch max-w-4xl mx-auto">
           {sponsors.slice(4).map((sponsor, index) => (
             <div
               key={index}
-              className="bg-white border-2 border-gray-200 rounded-2xl p-6 flex flex-col items-center justify-center hover:border-[#800020] hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="group relative bg-white border border-[#800020]/20 rounded-2xl p-6 flex flex-col items-center justify-between hover:border-[#800020]/50 hover:shadow-lg transition-all duration-300 overflow-hidden min-h-[11rem]"
             >
-              <img
-                src={sponsor.logo}
-                alt={sponsor.name}
-                className="max-h-20 w-full object-contain mb-4"
-              />
-              <p className="text-sm font-bold text-gray-900 text-center">
+              {/* Top accent bar */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#800020] to-[#ff9999]" />
+
+              {/* Logo */}
+              <div className="flex-1 flex items-center justify-center w-full py-2">
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  className="max-h-20 w-full object-contain"
+                />
+              </div>
+
+              {/* Divider */}
+              <div className="w-10 h-0.5 bg-[#800020]/25 rounded-full my-2" />
+
+              {/* Name */}
+              <p className="text-xs font-bold text-gray-700 text-center group-hover:text-[#800020] transition-colors duration-300 leading-snug">
                 {sponsor.name}
               </p>
             </div>

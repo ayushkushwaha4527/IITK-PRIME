@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { GraduationCap, Link2, Landmark } from "lucide-react";
 import hayatRegency from "../../assets/images/hyatt.webp";
 import iitkvideo from "../../assets/images/iitkvideo.mp4";
+
 /* ---------------- Counter Component ---------------- */
 function Counter({ target }: { target: number }) {
   const [count, setCount] = useState(0);
@@ -30,6 +32,27 @@ function Counter({ target }: { target: number }) {
 /* ---------------- About Section ---------------- */
 
 export function About() {
+  const whatToExpect = [
+    {
+      icon: <GraduationCap className="w-8 h-8 text-[#800020]" />,
+      title: "Research Leadership",
+      description:
+        "Origins of research excellence at IITK and global academic impact.",
+    },
+    {
+      icon: <Link2 className="w-8 h-8 text-[#800020]" />,
+      title: "Translational Leadership",
+      description:
+        "Bridging academic research with industry, policy, and real-world applications.",
+    },
+    {
+      icon: <Landmark className="w-8 h-8 text-[#800020]" />,
+      title: "Institution Building",
+      description:
+        "Leadership in academia, governance, and national capacity building.",
+    },
+  ];
+
   return (
     <section id="about" className="py-20 bg-white">
       {/* Header */}
@@ -55,24 +78,31 @@ export function About() {
             </h3>
             <p className="text-gray-700 mb-6 text-lg leading-relaxed">
               The IITK PRIME Leadership Conclave aims to bring together
-              distinguished alumni, researchers, industry leaders, and academic
-              administrators to reflect on the evolving role of institutions in
-              shaping leadership for society.
+              distinguished alumni, researchers, industry, and institutional
+              leaders to discuss the evolving role of academic institutions in
+              shaping national and global leadership.
             </p>
+
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              The event will focus on:
+            </h3>
 
             <ul className="space-y-3 text-gray-700 text-lg">
               <li className="flex items-start">
                 <span className="w-2 h-2 bg-[#800020] rounded-full mt-2 mr-3"></span>
                 Research excellence rooted in IIT Kanpur's academic traditions
               </li>
+
               <li className="flex items-start">
                 <span className="w-2 h-2 bg-[#800020] rounded-full mt-2 mr-3"></span>
                 Translational leadership and societal impact
               </li>
+
               <li className="flex items-start">
                 <span className="w-2 h-2 bg-[#800020] rounded-full mt-2 mr-3"></span>
                 Institution building and governance in emerging technologies
               </li>
+
               <li className="flex items-start">
                 <span className="w-2 h-2 bg-[#800020] rounded-full mt-2 mr-3"></span>
                 National service and global collaboration
@@ -80,13 +110,6 @@ export function About() {
             </ul>
           </div>
 
-          {/* <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1657673985908-949e0d79cb48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-              alt="Leadership conference"
-              className="w-full h-[500px] object-cover"
-            />
-          </div> */}
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <video
               src={iitkvideo}
@@ -96,6 +119,43 @@ export function About() {
               playsInline
               className="w-full h-[500px] object-cover"
             />
+          </div>
+        </div>
+
+        {/* ── What to Expect Cards ── */}
+        <div className="mb-20">
+          <h3 className="text-3xl md:text-4xl mb-12 text-center font-bold text-gray-900">
+            What to Expect
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {whatToExpect.map((item, i) => (
+              <div
+                key={i}
+                className="group flex flex-col items-center text-center bg-white border border-[#800020]/20 rounded-2xl px-8 py-10 shadow-sm hover:shadow-lg hover:border-[#800020]/50 transition-all duration-300 relative overflow-hidden"
+              >
+                {/* Top accent bar */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#800020] to-[#ff9999]" />
+
+                {/* Icon circle */}
+                <div className="w-20 h-20 rounded-full bg-[#800020]/8 border border-[#800020]/20 flex items-center justify-center mb-6 group-hover:bg-[#800020]/15 transition-colors duration-300">
+                  <span className="text-[#800020]">{item.icon}</span>
+                </div>
+
+                {/* Title */}
+                <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-[#800020] transition-colors duration-300">
+                  {item.title}
+                </h4>
+
+                {/* Divider */}
+                <div className="w-10 h-0.5 bg-[#800020]/30 rounded-full mb-3" />
+
+                {/* Description */}
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
