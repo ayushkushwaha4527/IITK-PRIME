@@ -23,6 +23,13 @@ import kamakoti from "../../assets/images/kamakoti.jpeg";
 import vinodk from "../../assets/images/vinodk.jpeg";
 import bkgairola from "../../assets/images/bkgairola.jpg";
 
+const nameToSlug = (name: string) =>
+  name
+    .toLowerCase()
+    .replace(/^(prof\.|dr\.|sri|cmde)\s+/i, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
 export function Speakers() {
   const speakers = [
     { name: "Prof. Thomas Thierauf", title: "Professor", company: "ULM University", image: thomas, website: "https://image.informatik.htw-aalen.de/~thierauf/" },
@@ -38,7 +45,7 @@ export function Speakers() {
     { name: "Sri V. Umashankar", title: "Secretary", company: "MoRTH, GoI", image: umashankar, website: "https://thesecretariat.in/bureautrack/v-umashankar-01hy021301" },
     { name: "Prof. Rajat Moona", title: "Director", company: "IIT Gandhinagar", image: rajatmoona, website: "https://iitgn.ac.in/about/director" },
     { name: "Dr. Prem Chand", title: "Co-Founder", company: "SecurWeave Research Labs Pvt Ltd.", image: premchand, website: "https://in.linkedin.com/in/dr-prem-chand-47669960" },
-    { name: "Dr. Bhartendu K. Gairola", title: "Ex Director", company: "NIC", image: bkgairola, website: "#" },
+    { name: "Dr. Bhartendu K. Gairola", title: "Ex Director-General", company: "NIC", image: bkgairola, website: "#" },
     { name: "Dr. Gulshan Rai", title: "Cyber Security Expert", company: "Former NCSC", image: gulshanrai, website: "https://www.vifindia.org/author/Dr-Gulshan-Rai" },
     { name: "Dr. Tanima Hajra", title: "C3iHub", company: "IIT Kanpur", image: tanimahajra, website: "https://in.linkedin.com/in/tanima-hajra-11a7144b" },
     { name: "Prof. Nisheeth Srivastava", title: "Professor", company: "IIT Kanpur", image: nisheeth, website: "https://iitk.ac.in/nisheeth-srivastava" },
@@ -54,15 +61,16 @@ export function Speakers() {
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
            Speakers
         </h2>
-        {/* <p className="text-gray-200 max-w-3xl mx-auto">
-          Renowned researchers and leaders.
-        </p> */}
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {speakers.map((speaker, index) => (
-            <div key={index} className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#800020] p-6 text-center hover:-translate-y-2">
+            <div
+              key={index}
+              id={`speaker-${nameToSlug(speaker.name)}`}
+              className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#800020] p-6 text-center hover:-translate-y-2 scroll-mt-24"
+            >
               <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg mb-5">
                 <ImageWithFallback src={speaker.image} alt={speaker.name} className="w-full h-full object-cover object-top" />
               </div>

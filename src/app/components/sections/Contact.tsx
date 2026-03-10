@@ -30,7 +30,7 @@ export function Contact() {
                 <Mail className="w-5 h-5 sm:w-7 sm:h-7 text-[#800020]" />
               </div>
               <div>
-                <p className="font-bold text-gray-900">Email</p>
+                <p className="font-bold text-gray-900">Email :</p>
                 <p className="text-gray-700">
                   iitkprimeleadership@gmail.com
                 </p>

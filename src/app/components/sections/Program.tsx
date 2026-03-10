@@ -1,6 +1,13 @@
 import { Clock, MapPin, User } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
+const nameToSlug = (name: string) =>
+  name
+    .toLowerCase()
+    .replace(/^(prof\.|dr\.|sri|cmde)\s+/i, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
 export function Program() {
   const days = [
     {
@@ -86,7 +93,7 @@ export function Program() {
         {
           time: "9:30 AM – 10:30 AM",
           title: "Morning Session – Translational Leadership",
-          trackChair: " Prof. Somitra K Sanadhya (WSAIS/C3ihub, IITK)",
+          trackChair: " Prof. Somitra K Sanadhya (WSAIS/C3i, IITK)",
           speakers: [
             "Prof. Krishnamurty Subramanian – Economic leadership during once in a century crisis",
             "Sri V Umashankar – To be announced",
@@ -188,7 +195,7 @@ export function Program() {
       case "talk":
         return {
           card: "bg-white border border-gray-100 border-l-4 border-l-[#800020] shadow-sm hover:shadow-md",
-          badge: " text-black",
+          badge: "bg-white text-gray-700 border border-gray-300",
           dot: "bg-[#800020]",
           titleColor: "text-gray-900",
           trackChairBg: "bg-[#800020]/5 border-b border-[#800020]/10",
@@ -208,7 +215,7 @@ export function Program() {
       default:
         return {
           card: "bg-gray-50 border border-gray-200 border-l-4 border-l-gray-300 shadow-sm hover:shadow-md",
-          badge: "bg-gray-200 text-gray-700",
+          badge: "bg-gray-700 text-white",
           dot: "bg-gray-300",
           titleColor: "text-gray-800",
           trackChairBg: "bg-gray-100 border-b border-gray-200",
@@ -282,7 +289,7 @@ export function Program() {
                 className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden"
               >
                 {/* Day heading strip */}
-                <div className="bg-gradient-to-r from-[#800020]/8 to-transparent border-b border-gray-100 px-6 py-5 text-center">
+                <div className="bg-gradient-to-r from-[#800020]/10 to-transparent border-b border-[#800020]/10 px-6 py-5 text-center">
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
                     {day.day}
                   </h3>
@@ -312,14 +319,14 @@ export function Program() {
                           <div className={`${styles.card} rounded-2xl transition-shadow duration-200 overflow-hidden`}>
 
                             {/* Card Header */}
-                            <div className="px-5 pt-5 pb-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                            <div className="px-5 pt-4 pb-3 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                               <div className="flex-1 min-w-0">
 
                                 {/* Time & Location */}
                                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2.5">
                                   <div className="flex items-center gap-1.5 text-[#800020]">
                                     <Clock className="w-4 h-4 flex-shrink-0" />
-                                    <span className="font-bold text-sm">{session.time}</span>
+                                    <span className="font-bold text-[13px]">{session.time}</span>
                                   </div>
                                   <div className="flex items-center gap-1 text-gray-400">
                                     <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
@@ -328,14 +335,14 @@ export function Program() {
                                 </div>
 
                                 {/* Session Title */}
-                                <h4 className={`text-xl md:text-2xl font-bold leading-snug ${styles.titleColor}`}>
+                                <h4 className={`text-lg md:text-xl font-bold leading-snug ${styles.titleColor}`}>
                                   {session.title}
                                 </h4>
                               </div>
 
                               {/* Type Badge */}
                               <div className="flex-shrink-0 self-start">
-                                <span className={`inline-block px-4 py-1.5 rounded-full text-sm font-semibold capitalize shadow-sm ${styles.badge}`}>
+                                <span className={`inline-block px-3.5 py-1 rounded-full text-xs font-bold capitalize tracking-wide ${styles.badge}`}>
                                   {session.type}
                                 </span>
                               </div>
@@ -369,7 +376,7 @@ export function Program() {
                                   return (
                                     <div
                                       key={i}
-                                      className={`flex items-start gap-3 px-4 py-3 ${styles.speakerRowBg} transition-colors ${
+                                      className={`flex items-start gap-3 px-4 py-2.5 ${styles.speakerRowBg} transition-colors ${
                                         i < session.speakers!.length - 1 ? "border-b border-gray-100" : ""
                                       }`}
                                     >
@@ -377,7 +384,21 @@ export function Program() {
                                         {i + 1}
                                       </span>
                                       <div className="flex-1 min-w-0">
-                                        <span className="font-semibold text-sm text-gray-900">{name}</span>
+                                        <a
+                                          href={`#speaker-${nameToSlug(name)}`}
+                                          onClick={(e) => {
+                                            e.preventDefault();
+                                            const el = document.getElementById(`speaker-${nameToSlug(name)}`);
+                                            if (el) {
+                                              el.scrollIntoView({ behavior: "smooth", block: "center" });
+                                              el.classList.add("ring-2", "ring-[#800020]", "ring-offset-2");
+                                              setTimeout(() => el.classList.remove("ring-2", "ring-[#800020]", "ring-offset-2"), 2000);
+                                            }
+                                          }}
+                                          className="font-semibold text-sm text-gray-900 hover:text-[#800020] hover:underline underline-offset-2 cursor-pointer transition-colors duration-150"
+                                        >
+                                          {name}
+                                        </a>
                                         {talk && (
                                           <>
                                             <span className="text-gray-300 mx-1">—</span>

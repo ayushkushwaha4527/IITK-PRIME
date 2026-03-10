@@ -21,7 +21,7 @@ export function OrganizationTeam() {
     {
       role: "Organizing Chair",
       name: "Prof. Amey Karkare",
-      title: "Dean, DORA",
+      title: "Dean of Resources and Alumni",
       company: "IIT Kanpur",
       image: ameykakre,
       website: "https://www.iitk.ac.in/dr-amey-karkare",

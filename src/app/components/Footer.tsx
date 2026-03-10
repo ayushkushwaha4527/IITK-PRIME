@@ -87,7 +87,7 @@ export function Footer() {
 
             <div className="space-y-3 text-gray-400">
               <p>
-                Email:{" "}
+                Email :{" "}
                 <span className="hover:text-[#800020] transition-colors">
                   iitkprimeleadership@gmail.com
                 </span>
