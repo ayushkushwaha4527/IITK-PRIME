@@ -1,17 +1,19 @@
 import cdis from "../../assets/images/cdis.png";
 import c3ihub from "../../assets/images/c3ihub.jpeg";
-import airawat from "../../assets/images/airawat.jpeg";
+// import airawat from "../../assets/images/airawat.jpeg";
 import wsais from "../../assets/images/wsais.png";
 import siic from "../../assets/images/siic.png";
 import dora from "../../assets/images/dora.png";
 import kss from "../../assets/images/kotak.jpeg";
+import newarf from "../../assets/images/newarf.png";
+
 
 export function Sponsors() {
   const sponsors = [
     { name: "WSAIS IIT Kanpur", logo: wsais },
     { name: "CDIS IIT Kanpur", logo: cdis },
     { name: "C3iHub IIT Kanpur", logo: c3ihub },
-    { name: "Airawat Research Foundation", logo: airawat },
+    { name: "Airawat Research Foundation", logo: newarf },
     { name: "FIRST IIT Kanpur", logo: siic },
     { name: "KSS IIT Kanpur", logo: kss },
     { name: "DORA IIT Kanpur", logo: dora },

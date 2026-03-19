@@ -13,7 +13,7 @@ export function OrganizationTeam() {
     {
       role: "General Chair",
       name: "Prof. Nitin Saxena",
-      title: "Dean, WSAIS",
+      title: "Dean, Wadhwani School of AI & Intelligent Systems (WSAIS)",
       company: "IIT Kanpur",
       image: nitinsir,
       website: "https://www.iitk.ac.in/dr-nitin-saxena",
