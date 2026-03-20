@@ -43,14 +43,14 @@ export function Program() {
             "Prof. Madhavan Mukund – Hybrid Systems",
           ],
           description:
-            "Research Excellence with origins in IIT Kanpur. 4 Speakers – 15 min each.",
+            "Research Excellence with origins in IIT Kanpur.",
           type: "talk",
           location: "Main Hall",
         },
         {
           time: "6:00 PM – 7:00 PM",
           title:
-            "Short Talks - Title: Manindra as I know him (10 minutes each)",
+            "Short Talks - Title: Manindra as I know him",
           speakers: [
             "Prof. Somenath Biswas",
             "Prof. V Vinay",
@@ -97,20 +97,20 @@ export function Program() {
           trackChair: " Prof. Somitra K Sanadhya (WSAIS/C3i, IITK)",
           speakers: [
             "Prof. Krishnamurty Subramanian – Economic leadership during once in a century crisis",
-            "Sri V Umashankar – To be announced",
+            "Dr. Gulshan Rai – Evolving technological complexities impact on institutions like IITs",
             "Dr. Bhartendu K Gairola – Need for building self reliance in core technology- Role of IITK",
           ],
           description:
-            "Translating Research to Impact. 3 Speakers – 20 minutes each.",
+            "Translating Research to Impact.",
           type: "talk",
           location: "Main Hall",
         },
         {
           time: "10:30 AM – 11:30 AM",
-          title: "Short Talks (12 minutes each)",
+          title: "Short Talks",
           speakers: [
             "Dr. Prem Chand – Applying Translational Leadership to Solve India's Hard Problems with Personal Real-Life Examples",
-            "Dr. Gulshan Rai – Evolving technological complexities impact on institutions like IITs",
+            
             "Dr. Tanima Hajra – Story of C3iHub: Building Indigenous Cybersecurity Capability",
             "Prof. Nisheeth Srivastava – Scaling agility: notes from the CDIS trenches",
             "Sri Anurag Singh – From Lab Excellence to Societal Impact",
@@ -134,7 +134,7 @@ export function Program() {
             "Prof. Vinod K Singh – The Craft of Academic Leadership",
           ],
           description:
-            "Institutional & Administrative Leadership. 2 Speakers – 30 minutes each.",
+            "Institutional & Administrative Leadership.",
           type: "talk",
           location: "Main Hall",
         },
@@ -148,10 +148,10 @@ export function Program() {
           time: "2:30 PM – 3:30 PM",
           title: "Talks",
           speakers: [
-            "Prof. Ajit Chaturvedi – To be announced",
+            "Prof. Ajit Chaturvedi – Is this the right time to privatise the IITs?",
             "Prof. Surender Baswana – The Art of Listening",
           ],
-          description: "2 Speakers – 30 minutes each.",
+          // description: "Two Speakers.",
           type: "talk",
           location: "Main Hall",
         },

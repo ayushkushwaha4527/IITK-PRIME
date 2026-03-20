@@ -11,7 +11,7 @@ import meenamahajan from "../../assets/images/meenamahajan.jpeg";
 import varvind from "../../assets/images/varvind.jpeg";
 import radhakrishna from "../../assets/images/radhakrishna.jpeg";
 import subramanian from "../../assets/images/subramanian.jpeg";
-import umashankar from "../../assets/images/umashankar.jpeg";
+// import umashankar from "../../assets/images/umashankar.jpeg";
 import rajatmoona from "../../assets/images/rajatmoona.jpeg";
 import premchand from "../../assets/images/premchand.jpeg";
 import gulshanrai from "../../assets/images/gulshanrai.jpeg";
@@ -106,13 +106,13 @@ export function Speakers() {
       website:
         "https://www.isb.edu/faculty-and-research/faculty-directory/krishnamurthy-subramanian",
     },
-    {
-      name: "Sri V. Umashankar",
-      title: "Secretary",
-      company: "MoRTH, GoI",
-      image: umashankar,
-      website: "https://thesecretariat.in/bureautrack/v-umashankar-01hy021301",
-    },
+    // {
+    //   name: "Sri V. Umashankar",
+    //   title: "Secretary",
+    //   company: "MoRTH, GoI",
+    //   image: umashankar,
+    //   website: "https://thesecretariat.in/bureautrack/v-umashankar-01hy021301",
+    // },
     {
       name: "Prof. Rajat Moona",
       title: "Director",
