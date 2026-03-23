@@ -12,7 +12,7 @@ import varvind from "../../assets/images/varvind.jpeg";
 import radhakrishna from "../../assets/images/radhakrishna.jpeg";
 import subramanian from "../../assets/images/subramanian.jpeg";
 // import umashankar from "../../assets/images/umashankar.jpeg";
-import rajatmoona from "../../assets/images/rajatmoona.jpeg";
+//import rajatmoona from "../../assets/images/rajatmoona.jpeg";
 import premchand from "../../assets/images/premchand.jpeg";
 import gulshanrai from "../../assets/images/gulshanrai.jpeg";
 import tanimahajra from "../../assets/images/tanimahajra.jpeg";
@@ -113,13 +113,13 @@ export function Speakers() {
     //   image: umashankar,
     //   website: "https://thesecretariat.in/bureautrack/v-umashankar-01hy021301",
     // },
-    {
-      name: "Prof. Rajat Moona",
-      title: "Director",
-      company: "IIT Gandhinagar",
-      image: rajatmoona,
-      website: "https://iitgn.ac.in/about/director",
-    },
+    // {
+    //   name: "Prof. Rajat Moona",
+    //   title: "Director",
+    //   company: "IIT Gandhinagar",
+    //   image: rajatmoona,
+    //   website: "https://iitgn.ac.in/about/director",
+    // },
     {
       name: "Dr. Prem Chand",
       title: "Co-Founder",

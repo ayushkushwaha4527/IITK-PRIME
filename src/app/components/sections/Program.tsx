@@ -98,7 +98,7 @@ export function Program() {
           speakers: [
             "Prof. Krishnamurty Subramanian – Economic leadership during once in a century crisis",
             "Dr. Gulshan Rai – Evolving technological complexities impact on institutions like IITs",
-            "Dr. Bhartendu K Gairola – Need for building self reliance in core technology- Role of IITK",
+            "Dr. Bhartendu K Gairola – Translational Research – A New Paradigm -Role Of IIT",
           ],
           description:
             "Translating Research to Impact.",
